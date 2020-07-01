@@ -1,8 +1,8 @@
 ﻿namespace WebApiVer01.Controllers
 {
-    using Microsoft.AspNetCore.Authorization;
+    
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.VisualBasic;
+    using System.Collections.Generic;
 
     [Route("api/[controller]")]
     [ApiController]
@@ -14,9 +14,9 @@
         //[Authorize]
         //[Route("ObtenerValores")]
         [HttpGet(Name = "ObtenerValores")]
-        public ActionResult<string> Get()
+        public ActionResult<IEnumerable<string>> Get()
         {
-            return DateAndTime.Now.Second.ToString();
+            return new string[] { "value1", "value2", "utut" };
         }
 
         // GET api/values/5
